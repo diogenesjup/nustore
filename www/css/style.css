@@ -142,13 +142,16 @@ nav ul li{
 	text-align: center;
 	padding-top: 15px;
 	width: 24%;
+	height: 55px !important;
 	font-size: 1.2em;
 }
 
 nav ul li a{
 	color:#555;
 }
-
+nav ul li.active{
+	background: #e6e6e6;
+}
 
 .topo{
 	position: relative;
