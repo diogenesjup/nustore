@@ -15,11 +15,13 @@ new WOW().init();
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      location.href="index.html";
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
-      location.href="index.html";
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
     }
   }
 
@@ -73,9 +75,9 @@ new WOW().init();
   function testAPI() {
     console.log('Bem vindo! Vamos buscar suas informações');
     FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
+      console.log('Login ativo com sucesso: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        'Obrigado por logar, ' + response.name + '!';
     });
     FB.api('/me', function(response) {
       console.log(JSON.stringify(response));
@@ -88,7 +90,7 @@ new WOW().init();
       console.log("ID: "+response.id);
       console.log("NOME: "+response.name);
       console.log("EMAIL: "+response.email);
-
+      if(response.id){ location.href="dashboard.html"; }
     });
   }
 
