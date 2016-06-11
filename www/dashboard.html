@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="nuStore">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all" /> 
+    <!-- SWEET ALERT -->
+    <link rel="stylesheet" type="text/css" href="css/sweetalert2.min.css">
+    <!-- FONTE UBUNTU -->
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
+    <!-- ANIMATE -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+   
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/app.js"></script>
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>   
+
+    <script src="js/wow.min.js"></script>      
+    <script type="text/javascript" src="js/sweetalert2.min.js"></script>                         
+    <script type="text/javascript" src="js/scripts.js"></script>    
+
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.6&appId=1698866733734454";
+        fjs.parentNode.insertBefore(js, fjs);
+      }
+      (document, 'script', 'facebook-jssdk'));
+    </script>
+
+  </head>
+  <body ng-controller="nuCtrl as vm" onload="checkLoginState();">
+
+    <ion-pane>
+      <ion-content>
+
+
+      <div class="container wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="1.7s">
+
+            
+     hello
+
+      </div>
+
+
+
+<!-- Modal de conteúdo HTML via AJAX -->
+
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalTitle">Nome da sub tela</h4>
+      </div>
+      <div class="modal-body" id="modalBody">
+
+     
+     <p>carregando...</p>
+   
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de conteúdo HTML via AJAX -->
+
+
+
+      </ion-content>
+
+    </ion-pane>
+  </body>
+</html>
