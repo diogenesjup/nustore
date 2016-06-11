@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lobster);
+
 
 * {
 	padding: 0;
@@ -10,13 +10,20 @@ html, body {
 	height: 100%;
 	min-width: 100%;
 	min-height: 100%;
-	font-family: "Open Sans";
+	font-family: 'Ubuntu', sans-serif;
 	font-size: 96%;
 }
 
+h1,h2,h3,h4,h5{
+    font-family: 'Ubuntu', sans-serif !important;
+    color:#00C99F !important;
+    font-weight: 700 !important;
+}
+
+
 a {
 	text-decoration: none;
-	color: #4285F4;
+	color:#1565C0;
 }
 
 a:hover {
@@ -28,12 +35,7 @@ img, picture, video, embed {  max-width: 100%; }
 
 textarea { overflow: auto; }
 
-.logo {
-	font-family: "Lobster";
-	font-weight: 300;
-	color: #4285F4;
-	font-size: 36px;
-}
+
 
 .txt-center { text-align: center; }
 .txt-right  { text-align: right; }
@@ -48,3 +50,70 @@ textarea { overflow: auto; }
 	margin-left: auto;
 	margin-right: auto;
 }
+
+
+.logo{
+	text-align: center;
+	padding-top: 50px;
+}
+
+
+.logo .btn{
+    width: 100%;
+    height: auto;
+}
+
+
+
+.btn{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+
+}
+
+.btn-default,.btn-default:hover,.btn-default:active{
+    background: #BDBDBD !important;
+    border-color:#BDBDBD !important;
+    color:#fff;
+}
+
+label{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color:#666;
+}
+
+.control-label{
+    text-align: right;
+}
+
+.modal-body .form-group{
+    margin-bottom: 02px;
+}
+
+
+.masterpass{
+   position: absolute;
+   top: 130px;
+   left:0px;
+   width: 100%;
+   font-family: 'Ubuntu', sans-serif;
+   font-weight: 400;
+   text-align: center;
+   color:#666;
+}
+.masterpass a{
+    text-decoration: none;
+}
+.masterpass img{
+    width:120px;
+    height: auto;
+    margin-top: 6px;
+}
+
+
+
+
+
+
+
