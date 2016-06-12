@@ -16,6 +16,8 @@
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
     <!-- ANIMATE -->
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <!-- DATA TABLE -->
+    <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css?v=2" media="all" /> 
    
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="cordova.js"></script>
@@ -27,6 +29,44 @@
     <script src="js/wow.min.js"></script>      
     <script type="text/javascript" src="js/sweetalert2.min.js"></script>                         
     <script type="text/javascript" src="js/scripts.js"></script>    
+    
+    
+      <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
+      <script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
+      <script type="text/javascript">
+             $(document).ready(function() {
+                  //$('#dataSelect').dataTable({"order": [[ 0, "desc" ]],"language": {"url": "ptbr.json"},dom: 'Bfrtip',buttons: ['print'] });
+
+             } );
+       jQuery(document).ready(function ($) {
+      
+             var table = $('#dataSelect').DataTable( {
+                "bProcessing": true,
+                "bServerSide": true,
+                "language": {"url": "ptbr.json"},
+                "sAjaxSource": "server_processing.php",
+                "columnDefs": [ {
+                "targets": -1,
+                "data": null,
+                "defaultContent": "<button class='btn btn-primary btn-xs'>add carrinho</button>"
+            } ]
+              } );
+
+             $('#dataSelect tbody').on( 'click', 'button', function () {
+                var data = table.row( $(this).parents('tr') ).data();
+                //alert( 'ID:' + data[0] );
+            } );
+
+
+             $('#myInputTextField').keyup(function(){
+                  table.search($(this).val()).draw() ;
+            })
+          
+       });      
+      </script>
+
+
 
     <script>
       (function(d, s, id) {
@@ -52,9 +92,25 @@
       <!-- BARRA IDENTIDADE -->
 
 
-      <div class="container wow fadeInDown" data-wow-delay="0.5s" data-wow-duration="1.7s">
+      <div class="container dashboard">
 
-            
+             
+             <div class="row wow fadeInDown" data-wow-delay="0.2s" data-wow-duration="0.7s">
+               <div class="col-sm-12 col-xs-12 txt-center">
+                 <h2>Vamos comprar hoje? <br> <small>para de ser mão de vaca e compra</small> </h2>
+               </div>
+             </div>
+
+             <div class="row">
+               <div class="col-sm-12 col-xs-12 wow slideInLeft" data-wow-delay="0.1s" data-wow-duration="1.7s">
+                 <button class="btn btn-dafault btn-lg txt-center">Estou fora do mercado</button>
+               </div>
+               <div class="col-sm-12 col-xs-12 wow slideInRight" data-wow-delay="0.5s" data-wow-duration="1.7s">
+                 <button class="btn btn-dafault btn-lg txt-center">Estou no mercado</button>
+               </div>
+             </div>
+
+
     
 
       </div>
@@ -64,14 +120,14 @@
       <!-- NAVEGAÇÃO --> 
       <nav>
         <ul>
-          <li class="active">
+          <li>
             <a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+            <a href="#" data-toggle="modal" data-target="#modalPesquisaProdutos"><i class="fa fa-search" aria-hidden="true"></i></a>
           </li>
           <li>
-            <a href="#"><i class="fa fa-credit-card-alt" aria-hidden="true"></i></a>
+            <a href="#" data-toggle="modal" data-target="#modalCartoes"><i class="fa fa-credit-card-alt" aria-hidden="true"></i></a>
           </li>
           <li>
             <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
@@ -108,6 +164,161 @@
 </div>
 
 <!-- Modal de conteúdo HTML via AJAX -->
+
+
+
+
+<!-- Modal Pesquisa de produtos -->
+
+<div class="modal fade" id="modalPesquisaProdutos" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"> Pesquisa de produtos</h4>
+      </div>
+      <div class="modal-body" >
+
+         <input type="text" class="form-control buscaDataTable" placeholder="Faça uma pesquisa pelo nome do produto" id="myInputTextField">
+
+          <table id="dataSelect" data-order='[[ 0, "desc" ]]' class="table table-hover">
+
+                  <thead>
+                    
+                    <th style="padding-left:8px;"><b>Produto</b></th>
+                    <th style="padding-left:8px;"><b>Preço</b></th>
+                    <th style="padding-left:8px;">&nbsp;</th>                  
+                  </thead>
+                 
+                  <tbody>
+                  </tbody>                  
+          </table>   
+   
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Pesquisa de Produtos -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal Cartões de Crédito -->
+
+<div class="modal fade" id="modalCartoes" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"> Seus Cartões</h4>
+      </div>
+      <div class="modal-body" >
+
+     
+ <!-- CREDIT CARD FORM STARTS HERE -->
+            <div class="panel panel-default credit-card-box">
+                <div class="panel-heading display-table" >
+                    <div class="row display-tr" >
+                        <h3 class="panel-title display-td" >Novo Cartão</h3>
+                        <div class="display-td" >                            
+                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                        </div>
+                    </div>                    
+                </div>
+                <div class="panel-body">
+                    <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="cardNumber">NÚMERO CARTÃO</label>
+                                    <div class="input-group">
+                                        <input 
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardNumber"
+                                            placeholder="Número do seu cartão"
+                                            autocomplete="cc-number"
+                                            required autofocus 
+                                        />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-7 col-md-7">
+                                <div class="form-group">
+                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRAÇÃO</span><span class="visible-xs-inline">EXP</span> DATA</label>
+                                    <input 
+                                        type="tel" 
+                                        class="form-control" 
+                                        name="cardExpiry"
+                                        placeholder="MM / YY"
+                                        autocomplete="cc-exp"
+                                        required 
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="form-group">
+                                    <label for="cardCVC">CV CODE</label>
+                                    <input 
+                                        type="tel" 
+                                        class="form-control"
+                                        name="cardCVC"
+                                        placeholder="CVC"
+                                        autocomplete="cc-csc"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-xs-12" style="padding-top:14px;">
+                                <button class="subscribe btn btn-success btn-lg btn-block" type="button">CADASTRAR</button>
+                            </div>
+                        </div>
+                        <div class="row" style="display:none;">
+                            <div class="col-xs-12">
+                                <p class="payment-errors"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>            
+            <!-- CREDIT CARD FORM ENDS HERE -->
+   
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Cartões de Crédito -->
+
+
+
+
+
 
 
 
