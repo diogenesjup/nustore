@@ -30,12 +30,18 @@
     <script type="text/javascript" src="js/sweetalert2.min.js"></script>                         
     <script type="text/javascript" src="js/scripts.js"></script>    
     
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
-      <script type="text/javascript">
-        $(document).ready(function(){
-           $('.cartao').mask('0000.0000.0000.0000', {reverse: true});
-        });
-      </script>
+
+    <script type="text/javascript">
+
+       jQuery(document).ready(function ($) {
+       
+       swal("Muito bem!", 'Sua compra foi realizada com sucesso, dirija-se a saída para a conferência dos produtos', "success");
+       
+       });  
+
+    </script>
+
+
       <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
       <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
       <script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
@@ -116,10 +122,9 @@
 
              });
 
-       });      
+           
 
 
-     
 
       </script>
 
