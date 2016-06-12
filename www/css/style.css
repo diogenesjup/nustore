@@ -122,7 +122,7 @@ label{
     text-decoration: none;
 }
 .masterpass img{
-    width:120px;
+    width:140px;
     height: auto;
     margin-top: 6px;
 }
@@ -182,17 +182,26 @@ nav .chartQuant{
 	background: #00C99F;
 	top:0;
 	width: 100%;
-	height: 30px;
+	height: 42px;
 	border-bottom:1px solid #ccc;
 	-webkit-box-shadow: 0px -6px 30px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px -6px 30px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px -6px 30px 0px rgba(0,0,0,0.75);
-	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10.5px !important;
+	text-align: right;
 	font-size: 1.2em;
-	padding-top: 2px;
+	font-size: 0.95em;
 	color:#fff;
 }
-
+.topo a{
+	font-family: 'Ubuntu', sans-serif;
+	color:#fff;
+	text-decoration: none;
+	font-weight: 700;
+	text-transform: uppercase;
+}
 .dashboard{
 	padding-top: 50px;
 }
@@ -280,4 +289,11 @@ input.buscaDataTable{
 
 .fa-times-circle{
 	color:#ff0000;
+}
+
+
+.logo-marca{
+	width: 65px;
+	height: auto;
+	margin-left: 0px;
 }
