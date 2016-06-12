@@ -63,7 +63,8 @@
   
                 var table = $('#dataSelect').DataTable( {
                     "ajax": 'server_processing.php',
-                    "language": {"url": "ptbr.json"}
+                    "language": {"url": "ptbr.json"},
+                    "pageLength": 3
                 } );
 
 
@@ -72,7 +73,12 @@
                   table.search($(this).val()).draw() ;
             })
           
-       });      
+       });
+
+
+       function msgAddCarrinho(){
+         swal("Muito bem!", 'Produto adicionado ao carrinho com sucesso', "success");
+       }      
       </script>
 
 
