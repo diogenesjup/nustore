@@ -172,7 +172,7 @@ nav ul li.active{
 nav .chartQuant{
 	position: absolute;
 	top:13px;
-	right: 22.5px;
+	right: 18.5px;
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: 700;
 	color:#ff0000;
@@ -281,3 +281,6 @@ input.buscaDataTable{
 }
 
 
+.fa-times-circle{
+	color:#ff0000;
+}
