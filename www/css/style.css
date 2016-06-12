@@ -72,8 +72,8 @@ textarea { overflow: auto; }
 }
 
 .btn-default,.btn-default:hover,.btn-default:active{
-    background: #BDBDBD !important;
-    border-color:#BDBDBD !important;
+    background: #dddddd !important;
+    border-color:#dddddd !important;
     color:#fff;
 }
 
@@ -134,9 +134,6 @@ p{
     font-weight: 400;
     color:#666;
 }
-
-
-
 
 
 nav{
