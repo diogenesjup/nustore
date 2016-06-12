@@ -169,6 +169,17 @@ nav ul li.active{
 	background: #e6e6e6;
 }
 
+nav .chartQuant{
+	position: absolute;
+	top:13px;
+	right: 22.5px;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 700;
+	color:#ff0000;
+	z-index: 5;
+}
+
+
 .topo{
 	position: relative;
 	background: #00C99F;
