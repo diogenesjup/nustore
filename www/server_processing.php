@@ -9,7 +9,7 @@
             "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
         ],
         [
-            "Chá gelado Mate Leão<br><i>Fabricado por Coca Cola Company</i><br><i>cod: 7891098040084</i>",
+            "Chá gelado<br><i>Fabricado por Coca Cola Company</i><br><i>cod: 7891098040084</i>",
             "R$7,90",
             "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
         ],
@@ -19,7 +19,7 @@
             "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
         ],
         [
-            "Água Mineral Minalba<br><i>Fabricado por Minalba</i><br><i>cod: 7896065880304</i>",
+            "Água Mineral Minalba<br><i>Fabricado por Mi</i><br><i>cod: 7896065880304</i>",
             "R$4,50",
             "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
         ],
