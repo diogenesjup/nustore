@@ -27,6 +27,11 @@
             "Yakult 80g<br><i>Fabricado por Yakult</i><br><i>cod: 78911000</i>",
             "R$12,00",
             "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
+        ],
+        [
+            "Pringles<br><i>Fabricado por Pringles</i><br><i>cod: 3800084996</i>",
+            "R$12,00",
+            "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
         ]
         
     ]
