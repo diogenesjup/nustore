@@ -259,6 +259,7 @@ input.buscaDataTable{
 	display: none;
 }
 #dataSelect_paginate{
+	display: none;
 	width: 500px !important;
 	float: none !important;
 	margin-left: -42px;
@@ -267,3 +268,5 @@ input.buscaDataTable{
 #dataSelect_processing{
 	padding: 15px;
 }
+
+
