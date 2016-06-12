@@ -108,12 +108,74 @@
 
             }); 
 
+
+             $("#procPayment").click(function(){                
+
+                 $('#modalCart').modal('hide');
+                 $('#modalSimplify').modal('show');
+
+             });
+
        });      
 
 
      
 
       </script>
+
+
+<!-- SIMPLIFY MASTER PASS -->
+<script type="text/javascript" src="https://www.simplify.com/commerce/v1/simplify.js"></script>
+<script type="text/javascript">
+    function simplifyResponseHandler(data) {
+        var $paymentForm = $("#simplify-payment-form");
+        // Remove all previous errors
+        $(".error").remove();
+        // Check for errors
+        if (data.error) {
+            // Show any validation errors
+            if (data.error.code == "validation") {
+                var fieldErrors = data.error.fieldErrors,
+                        fieldErrorsLength = fieldErrors.length,
+                        errorList = "";
+                for (var i = 0; i < fieldErrorsLength; i++) {
+                    errorList += "<div class='error'>Field: '" + fieldErrors[i].field +
+                            "' is invalid - " + fieldErrors[i].message + "</div>";
+                }
+                // Display the errors
+                $paymentForm.after(errorList);
+            }
+            // Re-enable the submit button
+            $("#process-payment-btn").removeAttr("disabled");
+        } else {
+            // The token contains id, last4, and card type
+            var token = data["id"];
+            // Insert the token into the form so it gets submitted to the server
+            $paymentForm.append("<input type='hidden' name='simplifyToken' value='" + token + "' />");
+            // Submit the form to the server
+            $paymentForm.get(0).submit();
+        }
+    }
+    $(document).ready(function() {
+        $("#simplify-payment-form").on("submit", function() {
+            // Disable the submit button
+            $("#process-payment-btn").attr("disabled", "disabled");
+            // Generate a card token & handle the response
+            SimplifyCommerce.generateToken({
+                key: "sbpb_YWIyMDFkOWItYzU1NC00Yzk4LWE4NzEtOWI1MDBhNDliZDVh",
+                card: {
+                    number: $("#cc-number").val(),
+                    cvc: $("#cc-cvc").val(),
+                    expMonth: $("#cc-exp-month").val(),
+                    expYear: $("#cc-exp-year").val()
+                }
+            }, simplifyResponseHandler);
+            // Prevent the form from submitting
+            return false;
+        });
+    });
+</script>
+<!-- SIMPLIFY MASTER PASS -->
 
 
 
@@ -315,6 +377,7 @@
                                             placeholder="Número do seu cartão"
                                             autocomplete="cc-number"
                                             required autofocus 
+                                            value="5292050051975465"
                                         />
                                         <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
                                     </div>
@@ -332,6 +395,7 @@
                                         placeholder="MM / YY"
                                         autocomplete="cc-exp"
                                         required 
+                                        value="03/20"
                                     />
                                 </div>
                             </div>
@@ -345,6 +409,7 @@
                                         placeholder="CVC"
                                         autocomplete="cc-csc"
                                         required
+                                        value="811"
                                     />
                                 </div>
                             </div>
@@ -450,7 +515,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Pagar com MasterPass</button>
+        <button type="button" class="btn btn-primary" id="procPayment">Pagar com MasterPass</button>
       </div>
     </div>
   </div>
@@ -459,7 +524,167 @@
 <!-- MODAL CART -->
 
 
+<!-- MODAL PARA PAGAMENTO NO SIMPLIFY MASTER PASS -->
 
+<div class="modal fade" id="modalSimplify" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirme sua compra</h4>
+      </div>
+      <div class="modal-body">
+
+     <!--  
+     <form id="simplify-payment-form" action="" method="POST">
+   
+    <div>
+        <label>Credit Card Number: </label>
+        <input id="cc-number" type="text" maxlength="20" autocomplete="off" value="" autofocus />
+    </div>
+    <div>
+        <label>CVC: </label>
+        <input id="cc-cvc" type="text" maxlength="4" autocomplete="off" value=""/>
+    </div>
+    <div>
+        <label>Expiry Date: </label>
+        <select id="cc-exp-month">
+            <option value="01">Jan</option>
+            <option value="02">Feb</option>
+            <option value="03">Mar</option>
+            <option value="04">Apr</option>
+            <option value="05">May</option>
+            <option value="06">Jun</option>
+            <option value="07">Jul</option>
+            <option value="08">Aug</option>
+            <option value="09">Sep</option>
+            <option value="10">Oct</option>
+            <option value="11">Nov</option>
+            <option value="12">Dec</option>
+        </select>
+        <select id="cc-exp-year">
+            <option value="15">2015</option>
+            <option value="16">2016</option>
+            <option value="17">2017</option>
+            <option value="18">2018</option>
+            <option value="19">2019</option>
+            <option value="20">2020</option>
+            <option value="21">2021</option>
+            <option value="22">2022</option>
+            <option value="23">2023</option>
+            <option value="24">2024</option>
+        </select>
+    </div>
+    <button id="process-payment-btn" type="submit">Confirmar a compra</button>
+</form>
+-->
+ <!-- CREDIT CARD FORM STARTS HERE -->
+
+            <div class="panel panel-default credit-card-box">
+                <div class="panel-heading display-table" >
+                    <div class="row display-tr" >
+                        <div class="display-td" >                            
+                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                        </div>
+                    </div>                    
+                </div>
+                <div class="panel-body">
+                     <form id="simplify-payment-form" action="" method="POST">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="cardNumber">NÚMERO CARTÃO</label>
+                                    <div class="input-group">
+                                        <input 
+                                            type="text"
+                                            class="form-control"
+                                            name="cardNumber"
+                                            placeholder="Número do seu cartão"
+                                            autocomplete="cc-number"
+                                            required autofocus 
+                                            id="cc-number"
+                                            value="5292050051975465"
+                                        />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <div class="form-group">
+                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRAÇÃO</span><span class="visible-xs-inline">EXP</span> MÊS</label>
+                                    <input 
+                                        type="tel" 
+                                        class="form-control" 
+                                        name="cardExpiry"
+                                        placeholder="MM"
+                                        value="03"
+                                        autocomplete="cc-exp"
+                                        required 
+                                        id="cc-exp-month"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4">
+                                <div class="form-group">
+                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRAÇÃO</span><span class="visible-xs-inline">EXP</span> ANO</label>
+                                    <input 
+                                        type="tel" 
+                                        class="form-control" 
+                                        name="cardExpiry"
+                                        placeholder="YY"
+                                        value="20"
+                                        autocomplete="cc-exp"
+                                        required 
+                                        id="cc-exp-year"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 pull-right">
+                                <div class="form-group">
+                                    <label for="cardCVC">CV CODE</label>
+                                    <input 
+                                        type="tel" 
+                                        class="form-control"
+                                        name="cardCVC"
+                                        placeholder="CVC"
+                                        autocomplete="cc-csc"
+                                        required
+                                        id="cc-cvc"
+                                        value="811"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="col-xs-12" style="padding-top:14px;">
+                                <button class="subscribe btn btn-success btn-lg btn-block" type="submit" id="process-payment-btn">CONFIRMAR SUA COMPRA</button>
+                            </div>
+                        </div>
+                        <div class="row" style="display:none;">
+                            <div class="col-xs-12">
+                                <p class="payment-errors"></p>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>            
+            </form>
+            <!-- CREDIT CARD FORM ENDS HERE -->
+   
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar pedido</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL PARA PAGAMENTO NO SIMPLIFY MASTER PASS -->
 
 
 
