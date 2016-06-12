@@ -153,7 +153,9 @@
             // Insert the token into the form so it gets submitted to the server
             $paymentForm.append("<input type='hidden' name='simplifyToken' value='" + token + "' />");
             // Submit the form to the server
+            //swal("Compra realizada com sucesso!", 'Se dirija até a saída para conferência de produtos', "success");
             $paymentForm.get(0).submit();
+
         }
     }
     $(document).ready(function() {
@@ -311,7 +313,8 @@
                     
                     <th style="padding-left:8px;"><b>Produto</b></th>
                     <th style="padding-left:8px;"><b>Preço</b></th>
-                    <th style="padding-left:8px;">&nbsp;</th>                  
+                    <th style="padding-left:8px;">&nbsp;</th>     
+                                  
                   </thead>
                  
                   <tbody>
@@ -359,7 +362,7 @@
                     <div class="row display-tr" >
                         <h3 class="panel-title display-td" >Novo Cartão</h3>
                         <div class="display-td" >                            
-                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                            <img class="img-responsive pull-right" src="img/mp_by_mc_mark_pos_089px.png">
                         </div>
                     </div>                    
                 </div>
@@ -584,7 +587,7 @@
                 <div class="panel-heading display-table" >
                     <div class="row display-tr" >
                         <div class="display-td" >                            
-                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                            <img class="img-responsive pull-right" src="img/mp_by_mc_mark_pos_089px.png">
                         </div>
                     </div>                    
                 </div>
