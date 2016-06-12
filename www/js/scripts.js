@@ -89,12 +89,15 @@ new WOW().init();
       console.log("NOME: "+response.name);
       console.log("EMAIL: "+response.email);
 
+     var res = response.name.split(" ");
+     document.getElementById("userName").innerHTML = res[0];
+     
     });
   }
 
 // fazer logoff
-//FB.logout(function(response) {
-   // Person is now logged out
-//});
+FB.logout(function(response) {
+   location.href="index.html";
+});
 
 
