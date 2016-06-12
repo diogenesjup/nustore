@@ -77,6 +77,22 @@ textarea { overflow: auto; }
     color:#fff;
 }
 
+.btn-primary,.btn-primary:hover,.btn-primary:active{
+    background: #00c99f !important;
+    border-color:#00c99f !important;
+    color:#fff;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #00c99f !important;
+    border-color: #00c99f !important;
+    cursor: default;
+}
+
+
+
 label{
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
@@ -167,4 +183,87 @@ nav ul li.active{
 	font-size: 1.2em;
 	padding-top: 2px;
 	color:#fff;
+}
+
+.dashboard{
+	padding-top: 50px;
+}
+
+.dashboard h2{
+	margin-bottom: 90px;
+}
+
+.dashboard .btn-lg{
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+
+
+/* CARTAO DE CREDITO */
+/* CSS for Credit Card Payment form */
+.credit-card-box .panel-title {
+    display: inline;
+    font-weight: bold;
+}
+.credit-card-box .form-control.error {
+    border-color: red;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
+}
+.credit-card-box label.error {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+.credit-card-box .payment-errors {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+.credit-card-box label {
+    display: block;
+}
+/* The old "center div vertically" hack */
+.credit-card-box .display-table {
+    display: table;
+}
+.credit-card-box .display-tr {
+    display: table-row;
+}
+.credit-card-box .display-td {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+}
+/* Just looks nicer */
+.credit-card-box .panel-heading img {
+    min-width: 180px;
+}
+/* CARTAO DE CREDITO */
+
+input.buscaDataTable{
+	width: 100%;
+}
+
+#dataSelect_length{
+	display: none;
+}
+#dataSelect_info{
+	display: none;
+}
+
+#dataSelect_filter{
+	display: none;
+}
+#dataSelect_paginate{
+	width: 500px !important;
+	float: none !important;
+	margin-left: -42px;
+}
+
+#dataSelect_processing{
+	padding: 15px;
 }
