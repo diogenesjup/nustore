@@ -4,58 +4,28 @@
     "recordsFiltered": 6,
     "data": [
         [
-            "Batata Frita<br><i>Fabricado por Extra</i>",
-            "R$56,00",
+            "Burn Energy Drink<br><i>Fabricado por Coca Cola Company</i><br><i>cod: 7894900401103</i>",
+            "R$13,00",
             "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
         ],
         [
-            "Macarrão<br><i>Fabricado por Dois de Corda</i>",
-            "R$12,00",
+            "Chá gelado Mate Leão<br><i>Fabricado por Coca Cola Company</i><br><i>cod: 7891098040084</i>",
+            "R$7,90",
             "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
         ],
         [
-            "Coca Cola<br><i>Fabricado por Coke of America</i>",
+            "Chocolate M&M's<br><i>Fabricado por Merterfoods do Brasil</i><br><i>cod: 7896423419276</i>",
             "R$5,00",
             "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
         ],
         [
-            "Pepsi<br><i>Fabricado por Pepsico</i>",
+            "Água Mineral Minalba<br><i>Fabricado por Minalba</i><br><i>cod: 7896065880304</i>",
             "R$4,50",
             "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
         ],
         [
-            "Feijão<br><i>Fabricado por Dois de Corda</i>",
+            "Yakult 80g<br><i>Fabricado por Yakult</i><br><i>cod: 78911000</i>",
             "R$12,00",
-            "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
-        ],
-        [
-            "Sonho de Valsa<br><i>Fabricado por Nestlê</i>",
-            "R$12,00",
-            "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
-        ],
-        [
-            "Chocolate<br><i>Fabricado por Nestlê</i>",
-            "R$12,00",
-            "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
-        ],
-        [
-            "Maça<br><i>Fabricado por Turma da Mõnico</i>",
-            "R$12,00",
-            "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
-        ],
-        [
-            "Dorflex<br><i>Fabricado por Novalgina</i>",
-            "R$5,00",
-            "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
-        ],
-        [
-            "Nescal<br><i>Fabricado por Nestlê</i>",
-            "R$12,00",
-            "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
-        ],
-        [
-            "Sucrilhos Kelloks<br><i>Fabricado por Kelloks</i>",
-            "R$16,50",
             "<button class='btn btn-primary btn-xs' onclick='msgAddCarrinho()'>add carrinho</button>"
         ]
         
